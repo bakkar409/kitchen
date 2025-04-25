@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Foodpanda Sign Up</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #ff2e63, #ff6fb7);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        background: #fff;
+        padding: 40px 30px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 420px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border-top: 8px solid #ff2e63;
+        animation: pop 0.4s ease;
+      }
+
+      @keyframes pop {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #ff2e63;
+        font-size: 28px;
+      }
+
+      .input-group {
+        margin-bottom: 18px;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        transition: 0.3s ease;
+        font-size: 15px;
+      }
+
+      .input-group input:focus {
+        border-color: #ff2e63;
+        outline: none;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 14px;
+        background-color: #ff2e63;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #e6004c;
+      }
+
+      .message {
+        margin-top: 15px;
+        text-align: center;
+        color: #1abc9c;
+        font-weight: 600;
+      }
+
+      @media (max-width: 500px) {
+        .container {
+          padding: 25px 20px;
+        }
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container" id="signup-box">
+      <h2>Create Your Account</h2>
+      <div class="input-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" />
+      </div>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+      </div>
+      <button class="btn" onclick="handleSignup()">Sign Up</button>
+      <div class="message" id="message"></div>
+      <div class="redirect-text">
+        Already have an account? <a href="login.html">Log in</a>
+      </div>
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

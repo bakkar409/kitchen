@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Foodpanda Login</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #ff2e63, #ff6fb7);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        background: #fff;
+        padding: 40px 30px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 420px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border-top: 8px solid #ff2e63;
+        animation: fadeIn 0.4s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #ff2e63;
+        font-size: 28px;
+      }
+
+      .input-group {
+        margin-bottom: 18px;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        transition: 0.3s ease;
+        font-size: 15px;
+      }
+
+      .input-group input:focus {
+        border-color: #ff2e63;
+        outline: none;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 14px;
+        background-color: #ff2e63;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #e6004c;
+      }
+
+      .message {
+        margin-top: 15px;
+        text-align: center;
+        color: #1abc9c;
+        font-weight: 600;
+      }
+
+      @media (max-width: 500px) {
+        .container {
+          padding: 25px 20px;
+        }
+      }
+      .abtn {
+        text-decoration: none;
+        color: #000000;
+        font-weight: 500;
+        background-color: #ff2e63;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .abtn:hover {
+        background-color: #e6004c;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container" id="login-box">
+      <h2>Only For Admin Use</h2>
+      <div class="input-group">
+        <label for="login-email">Email Address</label>
+        <input type="email" id="ale" placeholder="Enter your email" />
+      </div>
+      <div class="input-group">
+        <label for="login-password">Password</label>
+        <input
+          type="password"
+          id="alp"
+          placeholder="Enter your password"
+        />
+      </div>
+      <button class="abtn" onclick="handleLogin()">Login</button>
+      <div class="message" id="login-message"></div>
+      <div class="redirect-text">
+        I am not a Admin <a href="index.html">Sign up now</a>
+      </div>
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function handleLogin() {
+        const email = document.getElementById("ale").value;
+        const password = document.getElementById("alp").value;
+
+        if (email === "bakkarbhai@gmail.com" && password === "bakkarnoob") {
+          window.location.href = "admin.html";
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Invalid email or password!",
+          });
+        }
+      }
+
+    </script>
+  </body>
+</html>
